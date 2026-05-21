@@ -45,7 +45,25 @@
             <!-- Resultados -->
             <div id="resultado" class="hidden mt-5"></div>
         </div>
-        <div class="bg-slate-50 px-6 py-2.5 border-t border-slate-100 text-center"><p class="text-[9px] text-slate-400 font-medium">Uso interno autorizado • Información confidencial</p></div>
+
+        <!-- ================================================================= -->
+        <!--  ZONA DE ACTUALIZACIÓN: MODIFICA ESTOS TEXTOS CUANDO LO NECESITES  -->
+        <!-- ================================================================= -->
+        <div class="bg-slate-50 px-6 py-4 border-t border-slate-100 text-center space-y-1.5">
+            <p class="text-[10px] text-slate-500 font-semibold">
+                Última actualización de bases: 20 de mayo de 2026
+            </p>
+            <p class="text-[10px] text-slate-400 font-medium leading-relaxed">
+                Bases incluidas: Mallamas EPS-I
+            </p>
+            <div class="pt-1">
+                <span class="inline-block text-[9px] text-slate-400 font-bold uppercase tracking-wider bg-slate-200/60 px-2 py-0.5 rounded">
+                    Uso interno autorizado • Información confidencial
+                </span>
+            </div>
+        </div>
+        <!-- ================================================================= -->
+
     </div>
 
     <script>
@@ -62,10 +80,8 @@
             resultadoDiv.classList.add('hidden');
             loader.classList.remove('hidden');
 
-            // Enlace oficial ya integrado
             const URL_DE_TU_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbzfgec8HDuuh2ECkWzk6_ay27EArYSsZc8DyyImj_P5vHUoRQiUJIwE1IKtjBbRky_3/exec";
 
-            // Se realiza la petición externa limpia mediante parámetros de URL
             fetch(`${URL_DE_TU_APPS_SCRIPT}?documento=${encodeURIComponent(docValue)}`)
                 .then(response => response.json())
                 .then(response => {
